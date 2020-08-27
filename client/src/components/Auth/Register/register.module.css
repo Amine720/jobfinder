@@ -1,0 +1,70 @@
+.wrapper {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.formgroup {
+  margin-bottom: 20px;
+}
+
+.wrapper button,
+.forms button[type="submit"] {
+  color: white;
+  background-color: #fb246a;
+  border: none;
+  padding: 13px 22px;
+  cursor: pointer;
+}
+
+.wrapper button + button {
+  margin-left: 20px;
+}
+
+form label {
+  display: block;
+}
+
+.forms {
+  margin: 30px;
+  width: 50%;
+}
+
+.forms input,
+.forms textarea,
+.forms select {
+  width: 100%;
+  padding: 8px 16px;
+  /* margin-bottom: 20px; */
+}
+.forms textarea {
+  resize: none;
+}
+
+.forms button {
+  background-color: white;
+  color: #fb246a;
+  border: 1px solid #fb246a;
+}
+
+.skillBtn {
+  margin-bottom: 20px;
+  transition: 0.6s;
+}
+
+.skillBtn:hover {
+  color: white;
+  background-color: #fb246a;
+}
+
+.wrapper .job {
+  color: #fb246a;
+  background-color: white;
+  border: 1px solid #fb246a;
+}
+
+select {
+  margin-bottom: 20px;
+}
