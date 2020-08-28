@@ -5,14 +5,12 @@ const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 
 const oauth2Client = new OAuth2(
-  "571854254980-jf0fa31e6qmber7roq5r4s84fbkfuske.apps.googleusercontent.com",
-  "Tx8hO2BawNowI_tfAHrut0ux",
-  "https://developers.google.com/oauthplayground"
+  "ADD YOUR OAUTH CREDIENTIALS HERE"
 );
 
 oauth2Client.setCredentials({
   refresh_token:
-    "1//049T0FVaTQqBcCgYIARAAGAQSNwF-L9Irvv-BhQsfKSy5TMTRqCyHtBcsXvfNx2MsrFenRLuwg84Zqp03pfXPqfsBb1Bebh9tNE4",
+    "ADD YOUR REFRESH TOKEN HERE",
 });
 const accessToken = oauth2Client.getAccessToken();
 
@@ -25,19 +23,19 @@ router.post("/", async (req, res) => {
       auth: {
         type: "OAuth2",
         clientId:
-          "571854254980-jf0fa31e6qmber7roq5r4s84fbkfuske.apps.googleusercontent.com",
-        clientSecret: "Tx8hO2BawNowI_tfAHrut0ux",
+          "ADD YOUR CLIENT ID HERE",
+        clientSecret: "ADD YOUR CLIENT SECRET HERE",
       },
     });
     let info = await transporter.sendMail({
-      from: "takhajr@gmail.com",
+      from: "YOUR8GMAIL@gmail.com",
       to: req.body.to,
       subject: req.body.subject,
       html: req.body.body,
       auth: {
-        user: "takhajr@gmail.com",
+        user: "YOURGMAIL@gmail.com",
         refreshToken:
-          "1//049T0FVaTQqBcCgYIARAAGAQSNwF-L9Irvv-BhQsfKSy5TMTRqCyHtBcsXvfNx2MsrFenRLuwg84Zqp03pfXPqfsBb1Bebh9tNE4",
+          "ADD YOUR REFRESH TOKEN HERE",
         accessToken: accessToken,
         expires: 1484314697598,
       },
