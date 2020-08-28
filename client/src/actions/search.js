@@ -28,3 +28,14 @@ export const filter = (data) => async (dispatch) => {
     console.log("Error in filter");
   }
 };
+
+export const categorySearch = (category) => async (dispatch) => {
+  try {
+    const res = await axios.get(
+      `http://localhost:4545/api/job/category/${category}`
+    );
+    dispatch({ type: "SEARCH_RESULT", payload: res.data });
+  } catch (err) {
+    console.log("Error in filter");
+  }
+};

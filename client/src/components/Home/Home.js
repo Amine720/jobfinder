@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import Hero from "./Hero";
-import { Category } from "./Category";
+import Category from "./Category";
 import { Jobs } from "./Jobs";
 import { HowWorks } from "./HowWorks";
 import { Footer } from "./Footer";

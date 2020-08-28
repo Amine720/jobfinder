@@ -8,7 +8,7 @@ import { Redirect } from "react-router-dom";
 const Offer = ({ addjob, history }) => {
   const [data, setData] = useState({
     title: "",
-    category: "",
+    category: "creative",
     salary: 0,
     description: "",
     skills: "",
@@ -49,12 +49,20 @@ const Offer = ({ addjob, history }) => {
             </div>
             <div className={styles.formgroup}>
               <label>Category:</label>
-              <input
-                type="category"
+              <select
                 name="category"
                 value={data.category}
                 onChange={onChangeHandler}
-              />
+              >
+                <option value="creative">Design & Creative</option>
+                <option value="development">Design & Development</option>
+                <option value="sales_marketing">Sales & Marketing</option>
+                <option value="mobile_application">Mobile Application</option>
+                <option value="construction">Construction</option>
+                <option value="technology">Information Technology</option>
+                <option value="real_estate">Real Estate</option>
+                <option value="content_writer">Content Writer</option>
+              </select>
             </div>
             <div className={styles.formgroup}>
               <label>Salary (DH):</label>

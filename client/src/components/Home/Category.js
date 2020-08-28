@@ -1,6 +1,14 @@
 import React from "react";
+import { connect } from "react-redux";
+import { categorySearch } from "../../actions/search";
+import { withRouter } from "react-router-dom";
 
-export const Category = () => {
+const Category = ({ categorySearch, history }) => {
+  const onClickHandler = (category) => {
+    categorySearch(category);
+    history.replace("/search");
+  };
+
   return (
     <div className="our-services section-pad-t30">
       <div className="container">
@@ -14,7 +22,10 @@ export const Category = () => {
           </div>
         </div>
         <div className="row d-flex justify-contnet-center">
-          <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+          <div
+            className="col-xl-3 col-lg-3 col-md-4 col-sm-6"
+            onClick={() => onClickHandler("creative")}
+          >
             <div className="single-services text-center mb-30">
               <div className="services-ion">
                 <span className="flaticon-tour"></span>
@@ -27,7 +38,10 @@ export const Category = () => {
               </div>
             </div>
           </div>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+          <div
+            className="col-xl-3 col-lg-3 col-md-4 col-sm-6"
+            onClick={() => onClickHandler("development")}
+          >
             <div className="single-services text-center mb-30">
               <div className="services-ion">
                 <span className="flaticon-cms"></span>
@@ -40,7 +54,10 @@ export const Category = () => {
               </div>
             </div>
           </div>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+          <div
+            className="col-xl-3 col-lg-3 col-md-4 col-sm-6"
+            onClick={() => onClickHandler("sales_marketing")}
+          >
             <div className="single-services text-center mb-30">
               <div className="services-ion">
                 <span className="flaticon-report"></span>
@@ -53,7 +70,10 @@ export const Category = () => {
               </div>
             </div>
           </div>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+          <div
+            className="col-xl-3 col-lg-3 col-md-4 col-sm-6"
+            onClick={() => onClickHandler("mobile_application")}
+          >
             <div className="single-services text-center mb-30">
               <div className="services-ion">
                 <span className="flaticon-app"></span>
@@ -66,7 +86,10 @@ export const Category = () => {
               </div>
             </div>
           </div>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+          <div
+            className="col-xl-3 col-lg-3 col-md-4 col-sm-6"
+            onClick={() => onClickHandler("construction")}
+          >
             <div className="single-services text-center mb-30">
               <div className="services-ion">
                 <span className="flaticon-helmet"></span>
@@ -79,7 +102,10 @@ export const Category = () => {
               </div>
             </div>
           </div>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+          <div
+            className="col-xl-3 col-lg-3 col-md-4 col-sm-6"
+            onClick={() => onClickHandler("technology")}
+          >
             <div className="single-services text-center mb-30">
               <div className="services-ion">
                 <span className="flaticon-high-tech"></span>
@@ -92,7 +118,10 @@ export const Category = () => {
               </div>
             </div>
           </div>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+          <div
+            className="col-xl-3 col-lg-3 col-md-4 col-sm-6"
+            onClick={() => onClickHandler("real_estate")}
+          >
             <div className="single-services text-center mb-30">
               <div className="services-ion">
                 <span className="flaticon-real-estate"></span>
@@ -105,7 +134,10 @@ export const Category = () => {
               </div>
             </div>
           </div>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+          <div
+            className="col-xl-3 col-lg-3 col-md-4 col-sm-6"
+            onClick={() => onClickHandler("content_writer")}
+          >
             <div className="single-services text-center mb-30">
               <div className="services-ion">
                 <span className="flaticon-content"></span>
@@ -134,3 +166,11 @@ export const Category = () => {
     </div>
   );
 };
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    categorySearch: (category) => dispatch(categorySearch(category)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(withRouter(Category));
